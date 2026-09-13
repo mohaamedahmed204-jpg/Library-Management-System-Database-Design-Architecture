@@ -69,59 +69,58 @@ This database model demonstrates advanced relational database engineering princi
 
 Below is an overview of the relational schema depicting the tables and their primary/foreign key relationships:
 
-              +-------------------+
-              |   FineSettings    |
-              +-------------------+
-              | DefaultBorrowDays |
-              | DefaultFinePerDay |
-              +-------------------+
+                  +-------------------+
+                  |   FineSettings    |
+                  +-------------------+
+                  | DefaultBorrowDays |
+                  | DefaultFinePerDay |
+                  +-------------------+
 
-
-              +------------+       +-----------------+       +------------+
-              |  Authors   |       |   BookAuthor    |       |   Books    |
-              +------------+       +-----------------+       +------------+
-              |*AuthorID   |<----- |*BookAuthorID    |  +--->|*BookID     |
-              | Name       |       |*FK_AuthorID     |  |    | Title      |
-              +------------+       |*FK_BookID       |--+    | ISBN       |
-                                   | Genre           |       +------------+
-                    |              +-----------------+
-                    |
-                    | 1:N
-                    v
-              +------------+       +-----------------+       +------------+
-              |   Phones   |       |      Users      |       | BookCopies |
-              +------------+       +-----------------+       +------------+
-              |*PhoneID    |  +--->|*UserID          |<--+   |*BookCopyID |
-              |*FK_UserID  |--+    | Name            |   |   |*FK_BookID  |
-              | Phone      |       | LibraryCardNum  |   |   | Status     |
-              +------------+       +-----------------+   |   +------------+
-                    |                   |                |
-                    |                   |                |
-                    | 1:N               | 1:N            v
-                    v                   v         +------------------+
-              +----------+    +--------------+    | BorrowingRecords |
-              |  Emails  |    | Reservations |    |------------------|
-              +----------+    +--------------+    |*BorrowingRecordID|
-              |*EmailID  |    |*ReservationID|    |*FK_BookCopyID    |--+
-              |*FK_UserID|    |*FK_UserID    |    |*FK_UserID        |  |
-              | Email    |    | Status       |    | BorrowingDate    |  |
-              +----------+    +--------------+    | DueDate          |  |
-                                                  | ReturnDate       |  |
-                                                  +------------------+  |
-                                                           |            |
-                                                       1:N |            |
-                                                           v            |
-                                                    +--------------+    |
-                                                    |    Fines     |    |
-                                                    +--------------+    |
-                                                    |*FineID       |    |
-                                                    |*FK_UserID    |    |
-                                                    |*FK_BorrowID  |----+
-                                                    | LateDays     |
-                                                    | FineAmount   |
-                                                    | PaymentStatus|
-                                                    +--------------+
-
+    +------------+       +-----------------+       +------------+
+    |  Authors   |       |   BookAuthor    |       |   Books    |
+    +------------+       +-----------------+       +------------+
+    |*AuthorID   |<------|*BookAuthorID    |------>|*BookID     |
+    | Name       |       |*FK_AuthorID     |       | Title      |
+    +------------+       |*FK_BookID       |       | ISBN       |
+                         +-----------------+       | Genre      |
+                                                   +------------+
+                                                         |
+                                                         | 1:N
+                                                         v
+    +------------+                                 +------------+
+    |   Phones   |                                 | BookCopies |
+    +------------+                                 +------------+
+    |*PhoneID    |                                 |*BookCopyID |
+    |*FK_UserID  |--+                              |*FK_BookID  |
+    | Phone      |  |                              | Status     |
+    +------------+  |                              +------------+
+                    |                                    |
+                    v                                    v
+            +---------------+                    +------------------+
+            |     Users     |<-------------------| BorrowingRecords |
+            +---------------+   (1:N Users)      +------------------+
+            |*UserID        |                    |*BorrowingRecordID|
+            | Name          |<---+               |*FK_BookCopyID    |
+            | LibraryCardNum|    |               |*FK_UserID        |
+            +---------------+    |               | BorrowingDate    |
+                    ^            |               | DueDate          |
+                    |            |               | ReturnDate       |
+    +----------+    |            |               +------------------+
+    |  Emails  |    |            |                        |
+    +----------+    |            |                        | 1:N
+    |*EmailID  |----+            |                        v
+    |*FK_UserID|          +--------------+         +--------------+
+    | Email    |          | Reservations |         |    Fines     |
+    +----------+          +--------------+         +--------------+
+                          |*ReservationID|         |*FineID       |
+                          |*FK_UserID    |         |*FK_UserID    |
+                          | Status       |         |*FK_BorrowID  |--+
+                          +--------------+         | LateDays     |  |
+                                                   | FineAmount   |  |
+                                                   | PaymentStatus|  |
+                                                   +--------------+  |
+                                                          ^          |
+                                                          |----------+
 
 ---
 
