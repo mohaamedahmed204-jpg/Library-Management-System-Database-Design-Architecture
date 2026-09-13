@@ -142,18 +142,25 @@ To test this database with the provided backup file:
  ```bash
  git clone [https://github.com/YourUsername/Your-Repo-Name.git](https://github.com/YourUsername/Your-Repo-Name.git)
 ```
-2.Open the Diagram:
+2. **Open the Diagram**:
 
-    Open SimpleLibrary.drawio or SimpleLibrary_RelationalSchema.drawio in Draw.io.
+       Open SimpleLibrary.drawio or SimpleLibrary_RelationalSchema.drawio in Draw.io.
 
-3.Restore Database in SQL Server:
+3. **Restore Database in SQL Server**:
 
-    Open SQL Server Management Studio (SSMS).
-
-    Right-click on Databases -> Select Restore Database....
-
-    Choose Device and select the provided .bak file (P2-Library-Full Database Backup.bak).
-
-    Click OK and start executing your test queries!
+       Open SQL Server Management Studio (SSMS).
+   
+       Right-click on Databases -> Select Restore Database....
+   
+       Choose Device and select the provided .bak file (P2-Library-Full Database Backup.bak).
+   
+       Click OK and start executing your test queries!
 ---
 
+## 👨‍🏫 Instructor
+
+Dr. Mohammed Abu-Hadhoud
+Founder & Instructor — Programming Advices
+
+Programming Advices
+https://programmingadvices.com
