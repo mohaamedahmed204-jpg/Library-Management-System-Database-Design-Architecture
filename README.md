@@ -137,15 +137,11 @@ Below is an overview of the relational schema depicting the tables and their pri
 
 To test this database with the provided backup file:
 
-1. **Clone the Repository**:
- ```bash
-git clone https://github.com/mohaamedahmed204-jpg/Library-Management-System-Database-Design-Architecture.git
-```
-2. **Open the Diagram**:
+1. **Open the Diagram**:
 
        Open SimpleLibrary.drawio or SimpleLibrary_RelationalSchema.drawio in Draw.io.
 
-3. **Restore Database in SQL Server**:
+2. **Restore Database in SQL Server**:
 
        Open SQL Server Management Studio (SSMS).
    
