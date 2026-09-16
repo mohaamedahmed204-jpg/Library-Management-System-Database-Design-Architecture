@@ -139,7 +139,7 @@ To test this database with the provided backup file:
 
 1. **Clone the Repository**:
  ```bash
- git clone [[https://github.com/YourUsername/Your-Repo-Name.git](https://github.com/YourUsername/Your-Repo-Name.git)](https://github.com/mohaamedahmed204-jpg/Library-Management-System-Database-Design-Architecture)
+ git clone https://github.com/mohaamedahmed204-jpg/Library-Management-System-Database-Design-Architecture/tree/main
 ```
 2. **Open the Diagram**:
 
