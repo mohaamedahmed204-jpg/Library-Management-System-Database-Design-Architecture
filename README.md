@@ -154,8 +154,8 @@ To test this database with the provided backup file:
 
 ## 👨‍🏫 Instructor
 
-Dr. Mohammed Abu-Hadhoud
-Founder & Instructor — Programming Advices
+* Dr. Mohammed Abu-Hadhoud
+* Founder & Instructor — Programming Advices
 
 Programming Advices
 https://programmingadvices.com
